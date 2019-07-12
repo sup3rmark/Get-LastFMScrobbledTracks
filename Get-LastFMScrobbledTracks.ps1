@@ -4,10 +4,12 @@ function Get-LastFMScrobbledTracks {
         [string]$User,
 
         [Parameter(Mandatory = $false)]
+        [ValidateSet('overall','7day','1month','3month','6month','12month')]
         [string]$Period,
 
         [Parameter(Mandatory = $false)]
-        [string]$Limit,
+        [ValidateRange(1,1000)]
+        [int]$Limit,
 
         [Parameter(Mandatory = $false)]
         [string]$APIkey
